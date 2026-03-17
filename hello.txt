@@ -1,0 +1,6 @@
+sudo tio -b 921600 /dev/ttyUSB0
+
+cd /storage/E00E-71B0
+
+
+for apk in *.apk; do pm install "$apk"; done
