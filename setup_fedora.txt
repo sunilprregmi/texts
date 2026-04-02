@@ -9,9 +9,10 @@ sudo dnf group upgrade core
 
 
 #mediastack
-sudo dnf --allowerasing ffmpeg
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf groupupdate sound-and-video
+sudo dnf install gstreamer1-plugins-ugly gstreamer1-plugins-bad-freeworld gstreamer1-plugins-good-extras gstreamer1-vaapi
 sudo dnf install vlc vlc-plugins-freeworld
 
 #intel-driver
