@@ -1,0 +1,39 @@
+#updating rules to disable ts
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+#setup rpmfusion
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/
+sudo dnf group upgrade core
+
+
+#mediastack
+sudo dnf --allowerasing ffmpeg
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate sound-and-video
+sudo dnf install vlc vlc-plugins-freeworld
+
+#intel-driver
+sudo dnf install intel-media-driver
+
+#thermald
+sudo dnf install thermald
+sudo systemctl enable --now thermald
+
+#gnome-specific
+sudo dnf install gnome-tweaks
+sudo dnf install gnome-shell-extension-manager
+sudo dnf install yaru-gtk-theme yaru-icon-theme
+
+#misc-fs11
+https://github.com/yeyushengfan258/Sunset-Cursors
+https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts
+https://github.com/supercomputra/SF-Mono-Font
+
+git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git
+git clone https://github.com/supercomputra/SF-Mono-Font.git
+mkdir -p ~/.local/share/fonts
+cp San-Francisco-Pro-Fonts/*.otf ~/.local/share/fonts/
+cp SF-Mono-Font/*.otf ~/.local/share/fonts/
+fc-cache -fv
