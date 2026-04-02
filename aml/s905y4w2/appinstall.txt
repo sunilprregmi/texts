@@ -1,6 +1,6 @@
+#using tio for serial
 sudo tio -b 921600 /dev/ttyUSB0
-
+#going to mounted usb
 cd /storage/E00E-71B0
-
-
+#installing all apps in root of usb
 for apk in *.apk; do pm install "$apk"; done
