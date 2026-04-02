@@ -1,0 +1,2 @@
+#This rule disables touchscreen
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04f3", ATTRS{idProduct}=="2884", ATTR{authorized}="0"
