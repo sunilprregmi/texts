@@ -41,3 +41,4 @@ mkdir -p ~/.local/share/fonts
 cp San-Francisco-Pro-Fonts/*.otf ~/.local/share/fonts/
 cp SF-Mono-Font/*.otf ~/.local/share/fonts/
 fc-cache -fv
+fc-cache -f -v
