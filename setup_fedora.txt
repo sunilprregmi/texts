@@ -25,7 +25,11 @@ sudo systemctl enable --now thermald
 #gnome-specific
 sudo dnf install gnome-tweaks
 sudo dnf install gnome-shell-extension-manager
-sudo dnf install yaru-gtk-theme yaru-icon-theme
+sudo dnf install yaru-theme
+sudo dnf update
+sudo systemctl daemon-reload
+sudo dnf clean all
+sudo dnf makecache --refresh
 
 #misc-fs11
 https://github.com/yeyushengfan258/Sunset-Cursors
