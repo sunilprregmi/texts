@@ -7,7 +7,6 @@ sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/
 sudo dnf group upgrade core
 
-
 #mediastack
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
@@ -26,16 +25,16 @@ sudo systemctl enable --now thermald
 sudo dnf install gnome-tweaks
 sudo dnf install gnome-shell-extension-manager
 sudo dnf install yaru-theme
+sudo dnf remove gnome-classic-session.noarch
+
+#misc
 sudo dnf update
 sudo systemctl daemon-reload
 sudo dnf clean all
 sudo dnf makecache --refresh
+sudo dnf autoremove
 
-#misc-fs11
-https://github.com/yeyushengfan258/Sunset-Cursors
-https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts
-https://github.com/supercomputra/SF-Mono-Font
-
+#beauty-fs11
 git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git
 git clone https://github.com/supercomputra/SF-Mono-Font.git
 mkdir -p ~/.local/share/fonts
